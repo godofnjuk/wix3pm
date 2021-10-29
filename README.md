@@ -13,7 +13,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ## Deploy with Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://gitlab.com/godofnjuk/3pmwix/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/godofnjuk/wix3pm/tree/master)
 
 
 - [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:12bef5cd9559db2a62cb08b1b808458b?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:12bef5cd9559db2a62cb08b1b808458b?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
