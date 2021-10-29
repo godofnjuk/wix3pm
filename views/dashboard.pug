@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='../stylesheets/style.css')
+  body
+    block content
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+  h2(style="margin-left:10px;font-size:2em") Shipment Cost by RajaOngkir
+  #float-container
+  
+  #container(style="background-color: #605e5e; float: left; padding: 10px; margin-left:10px; width:15%")
+    form(class="form-signin" method="POST" action="/dashboard")
+      h5(style="color:#ffffff") Optional API Key 
+      input(type="text" name="apikey" id="apikey" class="form-control" placeholder="API Key" required autofocus)
+      h5(style="color:#ffffff") Origin
+      select(name='kota', id='kota', class="form-control")
+        each val in data
+          option(value=val.city_id) #{val.city_name}
+      h5
+      button(class=buttonClass type="submit" class="form-control" style="background-color:#30dbf0") Check
+  
