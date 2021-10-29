@@ -1,0 +1,20 @@
+{
+  "name": "wix3pm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/godofnjuk/wix3pm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godofnjuk/wix3pm/issues"
+  },
+  "homepage": "https://github.com/godofnjuk/wix3pm#readme"
+}
