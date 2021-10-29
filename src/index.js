@@ -2,6 +2,7 @@
 //import fetch from 'node-fetch';
 //const fetch = require('node-fetch');
 //import wixdata from 'wix-data';
+const cors = require('cors');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -22,9 +23,10 @@ var kotaku=12;
 var beratku=1000;
 var simpankota =256;
 const app = express();
-var server= require('http').createServer(app);
+var server= require('https').createServer(app);
 const port = process.env.PORT || 3000;
 const incomingWebhooks = [];
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
@@ -89,7 +91,7 @@ app.post('/webhook-callback', (req, res) => {
   console.log("app id ",APP_ID);
   console.log("app secret ",APP_SECRET);
   console.log("public key ",PUBLIC_KEY);
-  const data = jwt.verify(req.body, PUBLIC_KEY,{ algorithms: ["RS256"] });
+  const data = jwt.verify(req.body, PUBLIC_KEY,{ algorithms: ["HS256"] });
   const parsedData =  JSON.parse(data.data);
   const prettyData = {...data, data: {...parsedData, data: JSON.parse(parsedData.data)}};
   console.log('webhook event data after verification:', prettyData);
@@ -194,7 +196,7 @@ app.get('/login',async (req, res) => {
 app.get('/', (_, res) => {
 	//console.log("asu");
 	//var a = loadkota();
-  res.status(200).send('Hello Wix!')
+  res.status(200).send('Hello Wixaklaskjldaskjldaslkj!');
 });
   
 app.get('/instance',async (req, res) => {
