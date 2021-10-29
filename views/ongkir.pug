@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='../stylesheets/style.css')
+  body
+    block content
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+  script.
+        console.log("asw");
+  h2(style="margin-left:10px;font-size:2em;color:#605e5e") Shipment Cost by RajaOngkir
+  #float-container
+  
+  #container(style="background-color: #605e5e; float: left; padding: 10px; margin-left:10px; width:15%")
+    form(class="form-signin" method="POST" action="/ongkir")
+      h5(style="color:#ffffff") Destination
+      select(name='kota', id='kota', class="form-control")
+        each val in data
+          option(value=val.city_id) #{val.city_name}
+      h5(style="color:#ffffff") Courier
+      select(name='kurir', id='kurir',class="form-control")
+        each val in ['jne','tiki','pos']
+          option= val
+      h5
+      button(class=buttonClass type="submit" class="form-control" style="background-color:#30dbf0") Check
+  #container(style="background-color: #605e5e; padding: 10px; margin-left:16%; width:35%")
+    table(style="width:100%")
+      tr
+        th(style="color:#ffffff") Courier
+        th(style="color:#ffffff") Service
+        th(style="color:#ffffff") ETD
+        th(style="color:#ffffff") Cost
+        for item in data2
+          tr
+            td(style="color:#ffffff")=item.courier
+            td(style="color:#ffffff")=item.service
+            td(style="color:#ffffff")=item.etd
+            td(style="color:#ffffff")=item.cost
